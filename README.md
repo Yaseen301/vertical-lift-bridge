@@ -20,7 +20,7 @@ A Warren truss supports the bridge deck, with a motor and pulley mechanism raisi
 | --- | --- |
 | Firmware | [Arduino Nano control sketch](firmware/vertical_lift_bridge/vertical_lift_bridge.ino) |
 | Portfolio | [Research portfolio](portfolio.docx) |
-| Poster | [Poster availability](POSTER.md) |
+| Poster | [Full-size poster](poster-fullsize.pdf) |
 | Prototype design | [Design illustrations and model availability](DESIGN.md) |
 
 ## Arduino control
