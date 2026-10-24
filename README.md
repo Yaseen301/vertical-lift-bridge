@@ -18,9 +18,29 @@ A Warren truss supports the bridge deck, with a motor and pulley mechanism raisi
 
 | Material | File |
 | --- | --- |
+| Firmware | [Arduino Nano control sketch](firmware/vertical_lift_bridge/vertical_lift_bridge.ino) |
 | Portfolio | [Research portfolio](portfolio.docx) |
 | Poster | [Poster availability](POSTER.md) |
 | Prototype design | [Design illustrations and model availability](DESIGN.md) |
+
+## Arduino control
+
+The [Arduino Nano sketch](firmware/vertical_lift_bridge/vertical_lift_bridge.ino) is a reconstruction based on the team's description of the original two-button control. The original firmware was not retained. The driver and pin assignments below are assumptions for this version and should be checked against the actual circuit.
+
+| Connection | Nano pin |
+| --- | --- |
+| Raise button, other terminal to GND | D2 |
+| Lower button, other terminal to GND | D3 |
+| L298N IN1 | D8 |
+| L298N IN2 | D9 |
+
+This version assumes one channel of an L298N H-bridge with its ENA jumper fitted. Connect the motor to that channel's outputs, power the motor from a suitable separate supply, and connect the driver ground to Nano GND. Do not power the motor from a Nano I/O pin. If a different driver was used, adapt the output logic to that driver's requirements.
+
+Hold the raise button to wind the string and lift the midspan. Hold the lower button to reverse the motor. Releasing both buttons or pressing both sets both direction outputs LOW. The sketch includes button settling time and a short pause when changing directly between directions. If the motor runs the wrong way, swap its two output leads with power disconnected.
+
+Open `firmware/vertical_lift_bridge/vertical_lift_bridge.ino` in the Arduino IDE and select Arduino Nano with the processor/bootloader matching the board. No extra libraries are required.
+
+There are no automatic travel limits in this sketch; release the button before the span reaches either end. Setting the outputs LOW does not guarantee that a suspended span will hold its position; that depends on the lifting mechanism. This reconstruction has not been tested on the original hardware.
 
 ## Research context
 
