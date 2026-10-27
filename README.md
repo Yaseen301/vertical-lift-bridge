@@ -53,7 +53,7 @@ This repository presents a student team research project. The portfolio contains
 - Final grade: A+. Ranked fifth among Grade 10 capstone projects at the school.
 - Second-best bridge at the Cairo University Capstone exhibition competition in 2025.
 
-The results and distinctions above are reported in the project portfolio and the application CV.
+The results and distinctions above are reported in the project portfolio.
 
 ## Attribution
 
